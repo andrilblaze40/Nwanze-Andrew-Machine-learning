@@ -57,5 +57,16 @@ with st.expander('Input features'):
   input_predictors
 
 						
+# Encode y
+target_mapper = {'B': 0,
+                 'M': 1,
+                 }
+def target_encode(val):
+  return target_mapper[val]
 
+y = y.apply(target_encode)
+
+with st.expander('Data preparation'):
+  st.write('**Encoded y**')
+  y
 
