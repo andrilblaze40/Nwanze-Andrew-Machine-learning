@@ -65,6 +65,7 @@ def target_encode(val):
   return target_mapper[val]
 
 y = y.apply(target_encode)
+y
 
 with st.expander('input features'):
   st.write('**input_predictors**')
