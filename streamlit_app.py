@@ -28,7 +28,7 @@ with st.sidebar:
   texture_mean = st.slider('texture_mean', -6.8	, 6.0, -0.5)
   symmetry_worst= st.slider('symmetry_worst', -2.7, -2.7, 0.0) 
   symmetry_se= st.slider('symmetry_se', -6.0, 6.3, -0.0)
-  symmetry_mean= st.slider('symmetry_mean', -7.2, 6.4.0, -0.4)
+  symmetry_mean= st.slider('symmetry_mean', -7.2, 6.4, -0.4)
   smoothness_worst= st.slider('smoothness_worst', -11.9	, 11.7, -0.1)
   radius_worst= st.slider('radius_worst', -2.7, 2.7, -0.7)
   smoothness_se= st.slider('smoothness_se', -4.6, 6.6, 1.0)
