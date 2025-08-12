@@ -59,9 +59,7 @@ with st.expander('Input features'):
 
 
 # Data preparation
-# Encode y
-with st.expander('Data Preparation'):
- st.write('**Encoded input predictors**')						
+# Encode y		
  target_mapper = {'B': 0,
                  'M': 1,
                  }
