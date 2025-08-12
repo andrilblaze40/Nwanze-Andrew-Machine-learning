@@ -16,7 +16,7 @@ with st.expander("Data"):
   st.write("**y**")
   y = df.diagnosis
   y
-  with st.expander('Data visualization'):
+with st.expander('Data visualization'):
   st.scatter_chart(data=df, x='symmetry_mean', y='texture_mean', color='diagnosis')
       
 
