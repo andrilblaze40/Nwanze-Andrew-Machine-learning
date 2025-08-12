@@ -9,7 +9,9 @@ with st.expander("Data"):
   st.write("**X")
   X = df.drop("diagnosis", axis=1)
   X
-  
+  st.write("**y**")
+  y = df.diagnosis
+  y
 
 
 
