@@ -66,7 +66,10 @@ def target_encode(val):
 
 y = y.apply(target_encode)
 
-with st.expander('Data preparation'):
-  st.write('**Encoded y**')
-  y
+with st.expander('input features'):
+  st.write('**input_predictors**')
+  input_df
+  st.write('**Combined predictors data**')
+  input_predictors
+  st.write('**Encoded input predictors**')
 
