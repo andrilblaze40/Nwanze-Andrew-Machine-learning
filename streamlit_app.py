@@ -23,16 +23,16 @@ with st.expander('Data visualization'):
 with st.sidebar:
   st.header('Input features')
   
-  texture_worst = st.slider('texture worse', 32.1, 59.6, 43.9)
-  texture_se = st.slider('texture_se', 13.1, 21.5, 17.2)
-  texture_mean = st.slider('texture_mean', 172.0, 231.0, 201.0)
-  symmetry_worst= st.slider('symmetry_worst', 2700.0, 6300.0, 4207.0) 
-  symmetry_se= st.slider('symmetry_se', 2700.0, 6300.0, 4207.0)
-  symmetry_mean= st.slider('symmetry_mean', 2700.0, 6300.0, 4207.0)
-  smoothness_worst= st.slider('smoothness_worst', 2700.0, 6300.0, 4207.0)
-  radius_worst= st.slider('radius_worst', 2700.0, 6300.0, 4207.0)
-  smoothness_se= st.slider('smoothness_se', 2700.0, 6300.0, 4207.0)
-  smoothness_mean= st.slider('smoothness_mean', 2700.0, 6300.0, 4207.0)
+  texture_worst = st.slider('texture worse', -2.7, 2.7	, -0.0)
+  texture_se = st.slider('texture_se', -2.6, 2.6, -0.0)
+  texture_mean = st.slider('texture_mean', -6.8	, 6.0, -0.5)
+  symmetry_worst= st.slider('symmetry_worst', -2.7, -2.7, 0.0) 
+  symmetry_se= st.slider('symmetry_se', -6.0, 6.3, -0.0)
+  symmetry_mean= st.slider('symmetry_mean', -7.2, 6.4.0, -0.4)
+  smoothness_worst= st.slider('smoothness_worst', -11.9	, 11.7, -0.1)
+  radius_worst= st.slider('radius_worst', -2.7, 2.7, -0.7)
+  smoothness_se= st.slider('smoothness_se', -4.6, 6.6, 1.0)
+  smoothness_mean= st.slider('smoothness_mean', -13.2, 10.3, -1.5)
   
   
   # Create a DataFrame for the input features
