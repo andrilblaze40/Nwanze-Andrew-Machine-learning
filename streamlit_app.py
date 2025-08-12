@@ -69,3 +69,7 @@ with st.expander('Input features'):
   y = y.apply(target_encode)
   y
 
+with st.expander('Data Preparation'):
+  st.write('**Encoded y**')
+  y
+
