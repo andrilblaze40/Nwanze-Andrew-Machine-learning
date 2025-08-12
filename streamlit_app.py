@@ -51,10 +51,10 @@ with st.sidebar:
 
 
 with st.expander('Input features'):
-  st.write('**Input penguin**')
+  st.write('**Input predictors**')
   input_df
-  st.write('**Combined penguins data**')
-  input_penguins
+  st.write('**Combined predictors data**')
+  input_predictors
 
 						
 
