@@ -63,8 +63,8 @@ with st.expander('Input features'):
   target_mapper = {'B': 0,
                  'M': 1,
                  }
- def target_encode(val):
-  return target_mapper[val]
+  def target_encode(val):
+   return target_mapper[val]
 
   y = y.apply(target_encode)
   y
