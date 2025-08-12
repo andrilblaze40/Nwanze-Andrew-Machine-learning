@@ -7,7 +7,7 @@ st.info('This is a Machine Learning App')
 with st.expander("Data"):
   st.write("**Raw Data**")
   st.write("**X**")
-  X = df.drop("diagnosis", axis=1)
+  X = df.drop("diagnosis", inplace=True)
   X
   st.write("**y**")
   y = df.diagnosis
