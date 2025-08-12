@@ -57,17 +57,17 @@ with st.expander('Input features'):
   st.write('**Combined predictors data**')
   input_predictors
 
-# Data preparation						
+
+# Data preparation
 # Encode y
-target_mapper = {'B': 0,
+with st.expander('Data Preparation'):
+ st.write('**Encoded input predictors**')						
+ target_mapper = {'B': 0,
                  'M': 1,
                  }
-def target_encode(val):
+ def target_encode(val):
   return target_mapper[val]
 
-y = y.apply(target_encode)
-y
-
-with st.expander('Data Preparation'):
- st.write('**Encoded input predictors**')
+  y = y.apply(target_encode)
+  y
 
