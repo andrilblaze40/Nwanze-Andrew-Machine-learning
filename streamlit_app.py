@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-st.title('🎈 Machine Learning App')
+st.title('🎈 CANCER DIAGNOSIS APP')
 
 st.info('This is a Machine Learning App')
 with st.expander("Data"):
@@ -48,7 +48,13 @@ with st.sidebar:
           'smoothness_mean': smoothness_mean}
   input_df = pd.DataFrame(data, index=[0])
   input_predictors = pd.concat([input_df, X], axis=0)
-      
+
+
+with st.expander('Input features'):
+  st.write('**Input penguin**')
+  input_df
+  st.write('**Combined penguins data**')
+  input_penguins
 
 						
 
