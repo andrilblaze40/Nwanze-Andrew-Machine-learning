@@ -67,7 +67,7 @@ with st.expander('Input features'):
    return target_mapper[val]
 
   y = y.apply(target_encode)
-  y
+  
 
 with st.expander('Data Preparation'):
   st.write('**Encoded y**')
