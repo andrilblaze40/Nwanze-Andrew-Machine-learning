@@ -9,9 +9,9 @@ with st.expander("Data"):
   df = pd.read_csv("https://raw.githubusercontent.com/andrilblaze40/Nwanze-Andrew-Machine-learning/refs/heads/master/.streamlit/cleaned_breast_cancer_data.csv")
   df
 
-  #st.write("**X**")
-  #X = df.drop("diagnosis", inplace=True)
-  #X
+  st.write("**X**")
+  X = df.drop("diagnosis", inplace=True)
+  X
   
   #st.write("**y**")
   #y = df.diagnosis
