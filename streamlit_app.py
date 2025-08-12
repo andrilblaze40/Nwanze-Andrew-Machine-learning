@@ -10,7 +10,7 @@ with st.expander("Data"):
   df
 
   st.write("**X**")
-  X = df.drop("diagnosis", inplace=True)
+  X = df.drop("diagnosis", axis=1)
   X
   
   #st.write("**y**")
