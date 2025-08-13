@@ -96,3 +96,4 @@ y_train
 X_test
 y_test
 with st.expander('Split Data'):
+  
