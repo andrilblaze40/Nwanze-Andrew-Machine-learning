@@ -108,7 +108,7 @@ with st.expander('Split Data'):
   st.write('**y_test**')
   y_test.shape
  
-  smote=SMOTE(sampling_strategy='minority') 
+  smote=SMOTE(sampling_strategy='minority 
   x_train,y_trian=smote.fit_resample(x,y)                                                        
 with st.expander('Random_Resampling'):
   st.write('**X_train**')
