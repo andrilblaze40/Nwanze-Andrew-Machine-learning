@@ -96,8 +96,16 @@ with st.expander('Data Preparation'):
   X_test.shape
   y_test.shape
 with st.expander('Split Data'):
-  st.write('**X_train, X_test, y_train, y_test**')
+  st.write('**X_train**')
   X_train.shape
+  st.write('**y_train**')
+  y_train.shape
+  st.write('**X_test**')
+  X_test.shape
+  st.write('**y_test**')
+  y_test.shape
+  
+  
   y_train.shape
   X_test.shape
   y_test.shape
