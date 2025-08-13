@@ -30,8 +30,9 @@ with st.expander("Data"):
   y
   y
 with st.expander('Data visualization'):
+  st.write('**Scatter plot of symetry_mean vs texture_mean**')
   st.scatter_chart(data=df, x='symmetry_mean', y='texture_mean', color='diagnosis')
-
+  st.write('**Class Balance**')
   st.bar_chart(df["diagnosis"].value_counts(normalize=True))
  
 # Input features
