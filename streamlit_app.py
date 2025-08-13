@@ -85,3 +85,14 @@ with st.expander('Data Preparation'):
   st.write('**Encoded y**')
   y
 
+# Model training
+# Divide your dataset into training and test sets using a randomized split. Your test set should be 20% of your data. Be sure to set `random_state` to `42`.
+# Split the data into training and test sets
+X_train, X_test, y_train, y_test = train_test_split(
+X, y, test_size=0.2, random_state=42
+)
+X_train
+y_train
+X_test
+y_test
+
