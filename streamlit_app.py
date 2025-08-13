@@ -96,4 +96,5 @@ y_train
 X_test
 y_test
 with st.expander('Split Data'):
+  st.write('**X_train**')
   
