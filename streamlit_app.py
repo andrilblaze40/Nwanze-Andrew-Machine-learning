@@ -97,4 +97,8 @@ X_test
 y_test
 with st.expander('Split Data'):
   st.write('**X_train, X_test, y_train, y_test**')
+  X_train
+  y_train
+  X_test
+  y_test
   
