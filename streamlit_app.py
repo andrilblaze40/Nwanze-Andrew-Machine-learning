@@ -107,6 +107,15 @@ with st.expander('Split Data'):
   y_train.shape
   st.write('**y_test**')
   y_test.shape
+
+# Create a new feature matrix `X_train_over` and target vector `y_train_over` by performing random over-sampling on the training data. Be sure to set the `random_state` to `42`.
+  over_sampler = RandomOverSampler(random_state=42)
+  X_train_over, y_train_over = over_sampler.fit_resample(X_train, y_train)
+  print("X_train_over shape:", X_train_over.shape)
+  X_train_over.head()
+with st.expander('Random over-sampling'):
+  st.write('**X_train_over**')
+  X_train_over.head()
   
   
   
