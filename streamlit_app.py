@@ -108,13 +108,13 @@ with st.expander('Split Data'):
   st.write('**y_test**')
   y_test.shape
  
- # Create a Random Forest Classifier (you can use any classifier)
- base_classifier = RandomForestClassifier(random_state=42)
- # Create a BalancedBaggingClassifier
- balanced_bagging_classifier = BalancedBaggingClassifier(base_classifier, sampling_strategy='minority', replacement=False,random_state=42) 
- balanced_bagging_classifier.fit(X_train, y_train)   
- # Fit the model
- balanced_bagging_classifier.fit(X_train, y_train)
+# Create a Random Forest Classifier (you can use any classifier)
+  base_classifier = RandomForestClassifier(random_state=42)
+# Create a BalancedBaggingClassifier
+  balanced_bagging_classifier = BalancedBaggingClassifier(base_classifier, sampling_strategy='minority', replacement=False,random_state=42) 
+  balanced_bagging_classifier.fit(X_train, y_train)   
+# Fit the model
+  balanced_bagging_classifier.fit(X_train, y_train)
                                                         
                                                         
 with st.expander('Random over-sampling'):
