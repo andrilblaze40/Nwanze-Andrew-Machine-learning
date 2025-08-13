@@ -4,7 +4,6 @@ from sklearn.base import ClassifierMixin
 from sklearn.pipeline import Pipeline
 import matplotlib.pyplot as plt
 import pandas as pd
-from imblearn.over_sampling import RandomOverSampler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.impute import SimpleImputer
 from sklearn.metrics import ConfusionMatrixDisplay
