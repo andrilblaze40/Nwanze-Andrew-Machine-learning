@@ -120,7 +120,7 @@ with st.expander('Split Data'):
                                                         
 with st.expander('Random over-sampling'):
   st.write('**X_train_over**')
-  X_train_over.head()
+  balanced_bagging_classifier
   
   
   
