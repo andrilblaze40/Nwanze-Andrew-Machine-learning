@@ -12,7 +12,7 @@ from sklearn.model_selection import GridSearchCV, cross_val_score, train_test_sp
 from sklearn.pipeline import make_pipeline
 import seaborn as sns
 from imblearn.ensemble import BalancedBaggingClassifier
-from sklearn.utils._tags import _safe_tags
+
 
 st.title('🎈 CANCER DIAGNOSIS APP')
 
