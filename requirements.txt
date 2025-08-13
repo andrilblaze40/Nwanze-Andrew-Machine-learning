@@ -3,6 +3,6 @@ numpy
 pandas
 scikit-learn==1.5.0
 matplotlib
-imblearn==0.12.2
+imblearn==0.12.4
 seaborn
 scipy
