@@ -11,7 +11,7 @@ from sklearn.metrics import ConfusionMatrixDisplay
 from sklearn.model_selection import GridSearchCV, cross_val_score, train_test_split
 from sklearn.pipeline import make_pipeline
 import seaborn as sns
-from imblearn.ensemble import BalancedBaggingClassifier
+
 
 
 st.title('🎈 CANCER DIAGNOSIS APP')
