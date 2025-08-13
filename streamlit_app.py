@@ -31,6 +31,8 @@ with st.expander("Data"):
   y
 with st.expander('Data visualization'):
   st.scatter_chart(data=df, x='symmetry_mean', y='texture_mean', color='diagnosis')
+
+  st.bar_chart(df["diagnosis"].value_counts(normalize=True))
  
 # Input features
 with st.sidebar:
