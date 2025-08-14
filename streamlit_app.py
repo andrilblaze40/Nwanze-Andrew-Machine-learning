@@ -6,16 +6,17 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.impute import SimpleImputer
-from sklearn.metrics import ConfusionMatrixDisplay
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 from sklearn.model_selection import GridSearchCV, cross_val_score, train_test_split
 from sklearn.pipeline import make_pipeline
 import seaborn as sns
+from imblearn.over_sampling import RandomOverSampler
 
 
 
-st.title('🎈 CANCER DIAGNOSIS APP')
+st.title('🎈ML CANCER DIAGNOSIS APP')
 
-st.info('This is a Machine Learning App')
+st.info('MACHINE LEARNING PIPELINE')
 with st.expander("Data"):
   st.write("**Raw Data**")
   df = pd.read_csv("https://raw.githubusercontent.com/andrilblaze40/Nwanze-Andrew-Machine-learning/refs/heads/master/.streamlit/cleaned_breast_cancer_data.csv")
@@ -75,18 +76,18 @@ with st.expander('Input features'):
 
 # Data preparation
 # Encode y		
-  target_mapper = {'B': 0,
-                 'M': 1,
-                 }
-  def target_encode(val):
-   return target_mapper[val]
+  #target_mapper = {'B': 0,
+                 #'M': 1,
+                 #}
+  #def target_encode(val):
+  #return target_mapper[val]
 
-  y = y.apply(target_encode)
+  #y = y.apply(target_encode)
   
 
-with st.expander('Data Preparation'):
-  st.write('**Encoded y**')
-  y
+#with st.expander('Data Preparation'):
+  #st.write('**Encoded y**')
+  #y
 
 # Model training
 # Divide your dataset into training and test sets using a randomized split. Your test set should be 20% of your data. Be sure to set `random_state` to `42`.
@@ -107,8 +108,92 @@ with st.expander('Split Data'):
   y_train.shape
   st.write('**y_test**')
   y_test.shape
-with st.expander('wewlcome')
+
  
-  
-  
+ 
+#  Create a new feature matrix `X_train_over` and target vector `y_train_over` by performing random over-sampling on the training data.
+  over_sampler = RandomOverSampler(random_state=42)
+  X_train_over, y_train_over = over_sampler.fit_resample(X_train, y_train)
+  print("X_train_over shape:", X_train_over.shape)
+ 
+with st.expander(' RandomOverSampler'):
+  st.write('**X_train_over**')
+  X_train_over
+  st.write('**y_train_over**')
+  y_train_over
+
+# Create a classifier  that can be trained on `(X_train_over, y_train_over)`.
+  clf = make_pipeline(
+  SimpleImputer(),
+  RandomForestClassifier(random_state=42))
+  clf.fit(X_train_over, y_train_over)
+with st.expander('RandomForestClassifier'):
+  st.write('**Clf**')
+  clf
+
+# Perform cross-validation with your classifier using the over-sampled training data
+  cv_scores = cross_val_score(clf, X_train_over, y_train_over, cv=5, n_jobs=-1)
+with st.expander('Cross Validation'):
+  st.write('**cv_scores**')
+  cv_scores
+
+# Hyperparameters that you want to evaluate for your classifier. 
+  params = {
+    "randomforestclassifier__n_estimators": range(25, 100, 25),
+    "randomforestclassifier__max_depth": range(10,50,10)
+}
+  params
+with st.expander('Hyperparameter tuning'):
+  st.write('**params**')
+  params
+
+# Create a <code>GridSearchCV</code> named `model` that includes your classifier and hyperparameter grid. Be sure to set `cv` to 5, `n_jobs` to -1, and `verbose` to 1. 
+
+
+  model = GridSearchCV(
+  clf,
+  param_grid=params,
+  cv=5,
+  n_jobs=-1,
+  verbose=1)
+  model
+with st.expander('GridSearchCV'):
+  st.write('**model**')
+  model
+
+# Fit your model to the over-sampled training data. 
+  model.fit(X_train_over, y_train_over)
+with st.expander('Fit Model'):
+  st.write('**Fitted Model**')
+  model.fit
+
+  # Extract the cross-validation results from your model, and load them into a DataFrame
+  cv_results = pd.DataFrame(model.cv_results_)
+with st.expander('Cross Validation Results'):
+  st.write('**cv_results**')
+  cv_results
+
+  # Extract the best hyperparameters from your model and assign them to <code>best_params</code>. 
+  best_params = model.best_params_
+  best_params
+with st.expander('Best Hyperparameters'):
+  st.write('**best_params**')
+  best_params
+
+# Test the quality of your model by calculating accuracy scores for the training and test data.
+  acc_train = model.score(X_train_over, y_train_over)
+  acc_test = model.score(X_test, y_test)
+with st.expander('Accuracy Scores'):
+  st.write('**Training Accuracy**')
+  acc_train
+  st.write('**Test Accuracy**')
+  acc_test
+
+# Compute confusion matrix
+  cm = confusion_matrix(X_test, y_test)
+  disp = ConfusionMatrixDisplay(confusion_matrix=cm)
+  p = st.pyplot(disp)
+with st.expander('Confusion Matrix Display'):
+  st.write('**Confusion Matrix**')
+  p
   
