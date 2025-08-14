@@ -189,6 +189,10 @@ with st.expander('Accuracy Scores'):
   st.write('**Test Accuracy**')
   acc_test
 
+with st.expander('diagnosis'):
+  st.write('**y*')
+  y
+
 # Compute confusion matrix
   cm = confusion_matrix(X_test, y_test)
   disp = ConfusionMatrixDisplay(confusion_matrix=cm)
