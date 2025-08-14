@@ -74,21 +74,6 @@ with st.expander('Input features'):
   input_predictors
 
 
-# Data preparation
-# Encode y		
-  #target_mapper = {'B': 0,
-                 #'M': 1,
-                 #}
-  #def target_encode(val):
-  #return target_mapper[val]
-
-  #y = y.apply(target_encode)
-  
-
-#with st.expander('Data Preparation'):
-  #st.write('**Encoded y**')
-  #y
-
 # Model training
 # Divide your dataset into training and test sets using a randomized split. Your test set should be 20% of your data. Be sure to set `random_state` to `42`.
 # Split the data into training and test sets
@@ -189,9 +174,6 @@ with st.expander('Accuracy Scores'):
   st.write('**Test Accuracy**')
   acc_test
 
-with st.expander('diagnosis'):
-  st.write('**y*')
-  y
 
 # Compute confusion matrix
   cm = confusion_matrix(X_test, y_test)
