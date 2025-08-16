@@ -175,8 +175,8 @@ with st.expander('Accuracy Scores'):
   acc_test
   
 if st.button("Predict"):
-    prediction = model.predict(X_test)[0]
-    prob = model.predict_proba(X_test)[0][1]
+    prediction = model.predict(X_test)
+    prob = model.predict_proba(X_test)
 
     st.markdown("## 🔍 Prediction Result:")
     if prediction == 1:
