@@ -179,7 +179,7 @@ if st.button("Predict"):
   prob = model.predict_proba(X_test)
 
   st.markdown("## 🔍 Prediction Result:")
-if prediction[1] == 1:
+if prediction == 1:
    st.success(f"Malignant! (Confidence: {prob:.2%})")
 else:
    st.error(f"Biegnum! (Confidence: {1 - prob:.2%})")
