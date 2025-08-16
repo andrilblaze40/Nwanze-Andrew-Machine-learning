@@ -175,15 +175,21 @@ with st.expander('Accuracy Scores'):
   acc_test
   
 if st.button("Predict"):
-    prediction = model.predict(X_test)
-    prob = model.predict_proba(X_test)
+  prediction = model.predict(X_test)
+  prob = model.predict_proba(X_test)
 
-    st.markdown("## 🔍 Prediction Result:")
-    if prediction == 1:
-        st.success(f"Malignant! (Confidence: {prob:.2%})")
-    else:
-        st.error(f"Biegnum! (Confidence: {1 - prob:.2%})")
-
+  st.markdown("## 🔍 Prediction Result:")
+if prediction[1] == 1:
+   st.success(f"Malignant! (Confidence: {prob:.2%})")
+else:
+   st.error(f"Biegnum! (Confidence: {1 - prob:.2%})")
+  
+      
+      
+       
+   
+       
+     
 
 
   
