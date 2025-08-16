@@ -173,6 +173,16 @@ with st.expander('Accuracy Scores'):
   acc_train
   st.write('**Test Accuracy**')
   acc_test
+  
+if st.button("Predict"):
+    prediction = pipe.predict(input_df)[0]
+    prob = pipe.predict_proba(input_df)[0][1]
+
+    st.markdown("## 🔍 Prediction Result:")
+    if prediction == 1:
+        st.success(f"Loan is likely to be approved! (Confidence: {prob:.2%})")
+    else:
+        st.error(f"Loan is likely to be rejected. (Confidence: {1 - prob:.2%})")
 
 
 
