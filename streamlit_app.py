@@ -180,7 +180,7 @@ with st.expander('Accuracy Scores'):
   
   
   scaled_input = np.array(list(input_predictors.values())).reshape(1, -1)
-  prediction = model.predict(input_predictors)
+  prediction = model.predict(scaled_input)
  
   st.subheader("Cell cluster prediction")
 if prediction[0] == 0:
@@ -189,8 +189,8 @@ if prediction[0] == 0:
 else:
   
   st.write("Malignant")
-  st.write("Probability of being benign:", model.predict_proba(input_predictors)[0][0])
-  st.write("Probability of being malignant:", model.predict_proba(input_predictors)[0][1])
+  st.write("Probability of being benign:", model.predict_proba(scaled_input)[0][0])
+  st.write("Probability of being malignant:", model.predict_proba(scaled_input)[0][1])
   st.write("This app can assist medical professionals in making a diagnosis, but should not be used as a substitute for a professional diagnosis.")
 
 
