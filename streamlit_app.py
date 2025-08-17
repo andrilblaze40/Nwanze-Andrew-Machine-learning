@@ -174,7 +174,7 @@ with st.expander('Accuracy Scores'):
   st.write('**Test Accuracy**')
   acc_test
   
-def add_predictions(input_predictors):
+
   
   scaled_input = np.array(list(input_predictors.values())).reshape(1, -1)
   prediction = model.predict(scaled_input)
